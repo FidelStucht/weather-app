@@ -15,8 +15,129 @@
   </head>
   <body>
     <div class="container">
-      <h1>Hello World</h1>
-      <a href="" class="btn btn-primary">click me</a>
+      <h1>Weather App</h1>
+      <div id="root">
+        <div class="App">
+          <div class="container">
+            <div class="Weather">
+              <form>
+                <div class="row">
+                  <div class="col-9">
+                    <input
+                      type="search"
+                      placeholder="Enter a city..."
+                      class="form-control search-input"
+                    />
+                  </div>
+                  <div class="col-3 p-0">
+                    <input
+                      type="submit"
+                      class="btn btn-primary w-100"
+                      value="Search"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div class="WeatherInfo">
+                <div class="row">
+                  <div class="col-6">
+                    <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="clear"
+                    <h1>Munich</h1>
+                    <ul>
+                      <li><span>Saturday 23:04</span>, clear</li>
+                      <li>
+                        Humidity: <strong>69%</strong>, Wind:
+                        <strong>9.77km/h</strong>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-8">
+                    <div
+                      class="temperature-container d-flex justify-content-end"
+                    >
+                      <canvas width="52" height="52"></canvas>
+                      <div>
+                        <span class="temperature">18</span
+                        ><span class="unit">°C</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="WeatherForecast row">
+                <div class="col">
+                  <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Sat</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">18°</span
+                      ><span class="forecast-temperature-min">12°</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Sun</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">15°</span
+                      ><span class="forecast-temperature-min">10°</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Mon</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">14°</span
+                      ><span class="forecast-temperature-min">9°</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Tue</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">17°</span
+                      ><span class="forecast-temperature-min">9°</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="WeatherForecastPreview">
+                    <div class="forecast-time">Wed</div>
+                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-temperature">
+                      <span class="forecast-temperature-max">22°</span
+                      ><span class="forecast-temperature-min">11°</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer>
+                <small>
+                This project was coded by Fidelis and is
+                <a
+                  href="https://github.com/FidelStucht/weather-app.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >open-sourced on GitHub</a
+                >
+                and
+                <a
+                  href="https://brilliant-lily-7e19ce.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >hosted on Netlify</a
+                >
+                </small>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
