@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     
     <link
@@ -21,13 +21,15 @@
         <div class="App">
           <div class="container">
             <div class="Weather">
-              <form>
+              <form id="search-form">
                 <div class="row">
                   <div class="col-9">
                     <input
                       type="search"
                       placeholder="Enter a city..."
                       class="form-control search-input"
+                      id="city-input"
+                      autocomplete="off"
                     />
                   </div>
                   <div class="col-3 p-0">
@@ -35,6 +37,7 @@
                       type="submit"
                       class="btn btn-primary w-100"
                       value="Search"
+                      id="search"
                     />
                   </div>
                 </div>
@@ -42,7 +45,7 @@
               <div class="WeatherInfo">
                 <div class="row">
                   <div class="col-6">
-                    <img src="" alt="" id="weathericon">
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" alt="" id="weathericon">
                     <h1 id="city"></h1>
                     <ul>
                       <li>Last updated: <span id="date"></span>, <span id="description">clear</span><span></span></span></li>
