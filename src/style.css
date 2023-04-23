@@ -23,11 +23,13 @@ ul {
 }
 li {
   text-align: -webkit-match-parent;
-  text-transform: capitalize;
 }
 footer {
   display: block;
   text-align: center;
+}
+li:first-letter {
+  text-transform: capitalize;
 }
 .App {
   margin: 50px auto;
