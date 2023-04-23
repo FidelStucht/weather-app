@@ -143,6 +143,14 @@ li:first-letter {
   position: relative;
   top: -34px;
 }
+.Weather .active {
+  color: #212121;
+  cursor: default;
+  text-decoration: none;
+}
+.weather.active: hover {
+  text-decoration: none;
+}
 .WeatherForecast {
   border-bottom: 1px solid #f2f2f2;
   margin: 40px 0;
