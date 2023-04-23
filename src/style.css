@@ -23,6 +23,7 @@ ul {
 }
 li {
   text-align: -webkit-match-parent;
+  text-transform: capitalize;
 }
 footer {
   display: block;
