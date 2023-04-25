@@ -21,27 +21,39 @@ function formatDate(timestamp) {
   return `${day} ${hours}: ${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class=row>`;
   let days = ["Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
+  days.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="col">
                   <div class="WeatherForecastPreview">
-                    <div class="forecast-time">${day}</div>
-                    <canvas width="38" height="38"></canvas>
+                    <div class="forecast-time">${forecastDay.time}</div>
+                    <img
+          src="	https://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" alt="" width="42"/>
                     <div class="forecast-temperature">
-                      <span class="forecast-temperature-max">18°</span
-                      ><span class="forecast-temperature-min">12°</span>
+                      <span class="forecast-temperature-max">19°</span
+                      ><span class="forecast-temperature-min">16°</span>
                     </div>
                   </div>
                 </div>
                 `;
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(city) {
+  let apiKey = "370f6ctbab902413o43b492fe5060b44";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+function displayForecast(response) {
+  console.log(response.data.daily);
 }
 
 function displayTemperature(response) {
@@ -65,6 +77,8 @@ function displayTemperature(response) {
     ("src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
   iconElement.setAttribute = ("alt", response.data.condition.description);
+
+  getForecast(response.data.city);
 }
 
 function search(city) {
@@ -77,7 +91,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
-  console.log(cityInputElement.value);
 }
 
 function displayFahrenheitTemperature(event) {
@@ -99,7 +112,6 @@ function displayCelsiusTemperature(event) {
 }
 
 search("Munich");
-displayForecast();
 
 let celsiusTemperature = null;
 
@@ -111,3 +123,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#link-celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let dailyTemperature;
