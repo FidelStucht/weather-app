@@ -108,33 +108,10 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".temperature");
-  let displayFahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(displayFahrenheitTemperature);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".temperature");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let displayCelsiusTemperature = Math.round(celsiusTemperature);
-  temperatureElement.innerHTML = Math.round(displayCelsiusTemperature);
-}
-
 search("Munich");
-
-let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#link-fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#link-celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
